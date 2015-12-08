@@ -1,22 +1,27 @@
 import React from 'react';
 import Todo from './Todo';
 
-const TodoList = ({ todos, onRemove, onToggle }) =>
-    <div>
-        <h2>{todos.count()} todos in my list</h2>
+const TodoList = props => {
 
-        <ul>
-            {todos
-                .map((todo, i) =>
-                    <Todo
-                        key={i}
-                        onToggle={onToggle}
-                        onRemove={onRemove}
-                        todo={todo}
-                    />
-                )
-            }
-        </ul>
-    </div>
+    const {todos, onRemove, onToggle} = props;
+
+    return (
+            <ul>
+                {todos.map((todo,i) => {
+                    return(
+                        <Todo
+                            key={i}
+                            onToggle={onToggle}
+                            onRemove={onRemove}
+                            todo={todo}
+                        />
+
+                        );
+                })}
+            </ul>
+
+        );
+
+};
 
 export default TodoList;
