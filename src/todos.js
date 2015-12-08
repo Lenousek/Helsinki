@@ -1,4 +1,4 @@
-import { List } from 'immutable';
+import { List, Map } from 'immutable';
 import uuid from 'node-uuid';
 
 export default List.of(

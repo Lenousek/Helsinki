@@ -5,6 +5,8 @@ const TodoList = props => {
 
     const {todos, onRemove, onToggle} = props;
 
+    console.log(props, "somtehing");
+
     return (
             <ul>
                 {todos.map((todo,i) => {

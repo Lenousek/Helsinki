@@ -9,15 +9,15 @@ export default class TodoApp extends React.Component {
 
     render() {
 
-        const { todos, addTodo } = this.props;
+        const { todos, addTodo, removeTodo, toggleTodo } = this.props;
 
         console.log(this.props);
 
         return (
             <div>
             <TodoList
-                onRemove={this.removeTodo.bind(this)}
-                onToggle={this.removeTodo.bind(this)}
+                onRemove={removeTodo}
+                onToggle={toggleTodo}
                 todos ={todos}
             />
 
@@ -35,4 +35,12 @@ export default class TodoApp extends React.Component {
         });
 
     }
+
+    toggleTodo(id)  {
+        this.setState({
+            todos: this.state.todos.toggle(
+
+                )
+            });
+        }
 }
